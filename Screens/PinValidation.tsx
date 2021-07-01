@@ -27,67 +27,71 @@ class PinValidation extends React.Component<Props> {
   render() {
     const { pin1, pin2, pin3, pin4 } = this.state;
     return (
-      <View style={styles.container}>
-        <View style={[styles.s]}>
-          <TextInput
-            style={styles.c}
-            ref={"pin1ref"}
-            maxLength={1}
-            keyboardType={"numeric"}
-            onChangeText={(pin1) => {
-              this.setState({ pin1: pin1 });
-              if (pin1 !== "") {
-                this.refs.pin2ref.focus();
-              }
-            }}
-            value={pin1}
-          />
+      <View style={{ backgroundColor: "#fbf2d4", height: "100%" }}>
+        <View style={styles.container}>
+          <View style={[styles.s]}>
+            <TextInput
+              style={[styles.c]}
+              ref={"pin1ref"}
+              maxLength={1}
+              keyboardType={"numeric"}
+              onChangeText={(pin1) => {
+                this.setState({ pin1: pin1 });
+                if (pin1 !== "") {
+                  this.refs.pin2ref.focus();
+                }
+              }}
+              value={pin1}
+            />
+          </View>
+          <View style={[styles.s]}>
+            <TextInput
+              style={styles.c}
+              ref={"pin2ref"}
+              maxLength={1}
+              keyboardType={"numeric"}
+              onChangeText={(pin2) => {
+                this.setState({ pin2: pin2 });
+                if (pin2 !== "") {
+                  this.refs.pin3ref.focus();
+                }
+              }}
+              value={pin2}
+            />
+          </View>
+          <View style={styles.s}>
+            <TextInput
+              style={styles.c}
+              ref={"pin3ref"}
+              maxLength={1}
+              keyboardType={"numeric"}
+              onChangeText={(pin3) => {
+                this.setState({ pin3: pin3 });
+                if (pin3 !== "") {
+                  this.refs.pin4ref.focus();
+                }
+              }}
+              value={pin3}
+            />
+          </View>
+          <View style={styles.s}>
+            <TextInput
+              style={styles.c}
+              ref={"pin4ref"}
+              maxLength={1}
+              keyboardType={"numeric"}
+              onChangeText={(pin4) => this.setState({ pin4: pin4 })}
+              value={pin4}
+            />
+          </View>
         </View>
-        <View style={[styles.s]}>
-          <TextInput
-            style={styles.c}
-            ref={"pin2ref"}
-            maxLength={1}
-            keyboardType={"numeric"}
-            onChangeText={(pin2) => {
-              this.setState({ pin2: pin2 });
-              if (pin2 !== "") {
-                this.refs.pin3ref.focus();
-              }
-            }}
-            value={pin2}
-          />
+        <View style={{ top: 250 }}>
+          <View style={[styles.submit]}>
+            <TouchableOpacity>
+              <Text style={styles.submitText}>Re-send</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <View style={styles.s}>
-          <TextInput
-            style={styles.c}
-            ref={"pin3ref"}
-            maxLength={1}
-            keyboardType={"numeric"}
-            onChangeText={(pin3) => {
-              this.setState({ pin3: pin3 });
-              if (pin3 !== "") {
-                this.refs.pin4ref.focus();
-              }
-            }}
-            value={pin3}
-          />
-        </View>
-        <View style={styles.s}>
-          <TextInput
-            style={styles.c}
-            ref={"pin4ref"}
-            maxLength={1}
-            keyboardType={"numeric"}
-            onChangeText={(pin4) => this.setState({ pin4: pin4 })}
-            value={pin4}
-          />
-        </View>
-         {/* <View style={{ flex:1 }}>
-          <TouchableOpacity style={[styles.submit]}>
-            <Text style={styles.submitText}>Re-send the OTP</Text>
-          </TouchableOpacity>
-        </View> */}
       </View>
     );
   }
@@ -95,14 +99,15 @@ class PinValidation extends React.Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#fbf2d4",
+    // flex: 1,
+    // backgroundColor: "#fbf2d4",
     flexDirection: "row",
+    top: 200,
   },
   s: {
     flex: 0.6,
     justifyContent: "space-evenly",
-    fontWeight: "400",
+    fontWeight: "600",
   },
   c: {
     backgroundColor: "#f5f4f2",
@@ -113,9 +118,10 @@ const styles = StyleSheet.create({
     height: 55,
     width: "50%",
     borderRadius: 10,
-    borderWidth: 0.5,
+    borderWidth: 3,
     borderColor: "#939597",
     textAlign: "center",
+    marginTop: 10,
   },
   submit: {
     marginRight: 40,

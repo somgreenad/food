@@ -46,22 +46,22 @@ class LoginScreen extends React.Component<Props> {
           style={[styles.input]}
         />
         <Text style={styles.text}>{this.state.phoneError}</Text>
-
-        <TouchableOpacity
-          style={styles.submit}
-          onPress={() => this.props.navigation.navigate("PinValidation")}
-        >
-          <Text style={styles.submitText}>Login</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={styles.submit}
-          onPress={() => {
-            this.props.navigation.navigate("Register");
-          }}
-        >
-          <Text style={styles.submitText}>Register</Text>
-        </TouchableOpacity>
+        <View style={styles.submit}>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate("PinValidation")}
+          >
+            <Text style={styles.submitText}>Login</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.submit}>
+          <TouchableOpacity
+            onPress={() => {
+              this.props.navigation.navigate("Register");
+            }}
+          >
+            <Text style={styles.submitText}>Register</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -85,10 +85,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   submit: {
-    marginRight: 40,
-    marginLeft: "60%",
+    // marginRight: 40,
+    marginLeft: 20,
     marginTop: 10,
-    width: 100,
+    width: "85%",
   },
   submitText: {
     paddingTop: 10,

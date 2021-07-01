@@ -113,7 +113,7 @@ class RegisterScreen extends React.Component<Props> {
         <Text style={styles.text}>{this.state.emailError}</Text>
 
         {/* PASSWORD */}
-        <View>
+        <View style={{ flexDirection: "row" }}>
           <TextInput
             placeholder="Password"
             onBlur={() => this.passValidator()}
@@ -123,15 +123,19 @@ class RegisterScreen extends React.Component<Props> {
             }}
             style={[styles.input]}
           />
-          <TouchableOpacity style={styles.eye}>
-            <MaterialCommunityIcons
-              name={
-                this.state.show === false ? "eye-outline" : "eye-off-outline"
-              }
-              size={25}
-              onPress={this.passeye}
-            />
-          </TouchableOpacity>
+          <View style={styles.eye}>
+            <TouchableOpacity>
+              <MaterialCommunityIcons
+                name={
+                  this.state.show === false ? "eye-outline" : "eye-off-outline"
+                }
+                size={25}
+                onPress={this.passeye}
+              />
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate("Add")}
           >
@@ -153,14 +157,14 @@ const styles = StyleSheet.create({
   input: {
     borderColor: "#939597",
     height: 50,
-    borderWidth: 2,
-    borderRadius: 5,
+    borderWidth: 3,
+    borderRadius: 15,
     width: 300,
     marginLeft: 20,
     backgroundColor: "white",
     padding: 10,
     fontSize: 16,
-    marginTop: 15,
+    marginTop: 10,
   },
   text: {
     color: "red",
@@ -168,9 +172,10 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   eye: {
-    alignItems: "flex-end",
-    right: "15%",
-    
+    //alignItems: "flex-end",
+    // right: "100%",
+    marginLeft: -40,
+    marginTop: 20,
   },
 });
 
