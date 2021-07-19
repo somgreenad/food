@@ -10,12 +10,8 @@
       "town": "ilayankudi",
       "state": "tamilnadu",
       "area": "kannamangalam",
-      "cordination": [
-        {
-          "lattitude": "13.0827",
-          "longitude": "80.2707"
-        }
-      ]
+      "lattitude": "13.0827",
+      "longitude": "80.2707"
     },
     {
       "id": "2",
@@ -25,12 +21,8 @@
       "town": "ilayankudi",
       "state": "maharastra",
       "area": "koregaon",
-      "cordination": [
-        {
-          "lattitude": "17.709455",
-          "longitude": "74.178813"
-        }
-      ]
+      "lattitude": "17.709455",
+      "longitude": "74.178813"
     },
     {
       "id": "3",
@@ -40,12 +32,8 @@
       "town": "athikarai",
       "state": "tamilnadu",
       "area": "athikarai",
-      "cordination": [
-        {
-          "lattitude": "13.0827",
-          "longitude": "80.2707"
-        }
-      ]
+      "lattitude": "13.0827",
+      "longitude": "80.2707"
     }
   ]
 }
